@@ -50,7 +50,10 @@ RUN set -ex; \
 VOLUME ["/etc/logstash/conf.d"]
 
 COPY config/logstash /usr/share/logstash/config/
-COPY config/pipeline/default.conf /usr/share/logstash/pipeline/logstash.conf
+COPY HDFS /usr/share/logstash/HDFS
+COPY patterns/prefix /usr/share/logstash/patterns/prefix
+COPY patterns/hdfs_patterns /usr/share/logstash/patterns/hdfs_patterns
+COPY config/pipeline/hdfs_logstash.conf /usr/share/logstash/pipeline/logstash.conf
 COPY logstash-entrypoint.sh /
 
 EXPOSE 9600 5044
