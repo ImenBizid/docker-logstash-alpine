@@ -54,6 +54,7 @@ COPY HDFS /usr/share/logstash/HDFS
 COPY postfix /usr/share/logstash/patterns/postfix
 COPY hdfs_patterns /usr/share/logstash/patterns/hdfs_patterns
 COPY config/pipeline/hdfs_logstash.conf /usr/share/logstash/pipeline/logstash.conf
+COPY config/pipelines.yml /usr/share/logstash/config/pipelines.yml
 COPY logstash-entrypoint.sh /
 
 EXPOSE 9600 5044
